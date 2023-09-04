@@ -12,6 +12,7 @@ const companyLogos = [
   "https://semestaakademi.com/assets/v2/images/partners/tiketcom.png",
   "https://semestaakademi.com/assets/v2/images/partners/reckitt-beckinser.png",
   "https://semestaakademi.com/assets/v2/images/partners/tuku.png",
+
   // Add more logo paths as needed
 ];
 
@@ -118,6 +119,11 @@ const Beranda: React.FC = () => {
           </Button>
         </div>
       </div>
+      <SectionTitle
+        image="https://semestaakademi.com/assets/v2/Homepage/Testimoni.svg"
+        title="Testimoni Pengajar dan Alumni"
+      />
+      <div></div>
     </>
   );
 };

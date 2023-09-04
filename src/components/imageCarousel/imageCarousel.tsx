@@ -27,7 +27,7 @@ const ImageCarousel: React.FC<{ images: string[]; widthModifier?: number }> = ({
     <div ref={containerRef} className="min-h-[7rem] overflow-hidden w-full">
       <div className="flex w-fit min-h-[7rem] h-full items-center">
         <div
-          className={`h-10 flex animate-go-left-infinite`}
+          className={`h-10 flex animate-go-left-infinite hover:animate-none`}
           style={{
             width: containerWidth ? containerWidth * 2 * widthModifier : 0,
           }}
