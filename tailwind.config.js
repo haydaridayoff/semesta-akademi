@@ -33,6 +33,7 @@ module.exports = {
       },
       fontFamily: {
         primary: ["Hanken Grotesk"],
+        redactionItalic: ["Redaction Italic"],
       },
     },
   },

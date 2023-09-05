@@ -1,11 +1,19 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import ImageCarousel from "../components/imageCarousel/imageCarousel";
-import ProgramCard, {
-  ProgramStatus,
-} from "../components/programCard/programCard";
+import ImageCarousel from "../components/imageCarousel/infiniteCarousel";
+import ProgramCard, { ProgramStatus } from "../components/cards/programCard";
 import SectionTitle from "../components/title/sectionTitle";
 import Button from "../components/ui/button";
-// Sample company logos
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider, { Settings as SlickSettings } from "react-slick";
+import ProfileCard from "../components/cards/profileCard";
+import TestimonyCard, {
+  Color,
+  selectRandomColor2Execption,
+  selectRandomColorException,
+} from "../components/cards/testimonyCard";
+import GridColsLayout from "../components/layouts/gridColsLayout";
+
 const companyLogos = [
   "https://semestaakademi.com/assets/v2/images/partners/lazada.png",
   "https://semestaakademi.com/assets/v2/images/partners/boga-group.png",
@@ -15,6 +23,149 @@ const companyLogos = [
 
   // Add more logo paths as needed
 ];
+
+const testimonies = [
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+  {
+    testimony:
+      "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+    name: "Hiroto Rauzan Fikri",
+    role: "Digital Marketing",
+    image:
+      "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png",
+  },
+];
+
+const featuredPrograms = [
+  {
+    header: { status: ProgramStatus.OPEN, time: 3, timeUnit: "hari" },
+    img: "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+    title: "Semesta Akademi Digital Marketing",
+  },
+  {
+    header: { status: ProgramStatus.OPEN, time: 3, timeUnit: "hari" },
+    img: "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+    title: "Semesta Akademi Digital Marketing",
+  },
+  {
+    header: { status: ProgramStatus.OPEN, time: 3, timeUnit: "hari" },
+    img: "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+    title: "Semesta Akademi Digital Marketing",
+  },
+];
+
+const pengajarProfiles = [
+  {
+    name: "Mikhael Gaery Undarsa",
+    description: "Co-founder & Chief Marketing Officer at Tiket.com",
+    image: "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+  },
+  {
+    name: "Mikhael Gaery Undarsa",
+    description: "Co-founder & Chief Marketing Officer at Tiket.com",
+    image: "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+  },
+  {
+    name: "Mikhael Gaery Undarsa",
+    description: "Co-founder & Chief Marketing Officer at Tiket.com",
+    image: "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+  },
+  {
+    name: "Mikhael Gaery Undarsa",
+    description: "Co-founder & Chief Marketing Officer at Tiket.com",
+    image: "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+  },
+];
+
+const settings: SlickSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  centerMode: true,
+  arrows: false,
+  variableWidth: true,
+};
+
+const testimonyCards = () => {
+  const rows = [];
+  let selectedColor: Color = "orange";
+  for (let i = 0; i < testimonies.length; i++) {
+    rows.push(
+      <TestimonyCard
+        testimony={testimonies[i].testimony}
+        name={testimonies[i].name}
+        role={testimonies[i].role}
+        image={testimonies[i].image}
+        color={selectedColor}
+        className={i % 2 === 0 ? "rotate-1" : "-rotate-1"}
+      />
+    );
+    selectedColor = selectRandomColorException(selectedColor);
+    if (i >= testimonies.length - 1) {
+      selectedColor = selectRandomColor2Execption(selectedColor, "orange");
+    }
+  }
+  return rows;
+};
 
 const Beranda: React.FC = () => {
   return (
@@ -39,36 +190,14 @@ const Beranda: React.FC = () => {
       />
       <div className="px-14 py-5 pb-8 border-b border-primary-black">
         <div className="grid grid-flow-col overflow-x-auto gap-4 sm:grid-flow-dense sm:grid-cols-2 xl:grid-cols-3 justify-items-center">
-          <ProgramCard
-            header={{
-              status: ProgramStatus.OPEN,
-              time: 1,
-              timeUnit: "Hari",
-            }}
-            title="re-Setting OKR & re- Builfngaskfjaslfjalskfjaslkfjsaldjsal
-          kjdsaljfalkfjaslfkjasflkjljf"
-            img="https://semestaakademi.com/assets/v2/Okr/SA_PM_Thumbnail_Website.png"
-          />
-          <ProgramCard
-            header={{
-              status: ProgramStatus.OPEN,
-              time: 1,
-              timeUnit: "Hari",
-            }}
-            title="re-Setting OKR & re- Builfngaskfjaslfjalskfjaslkfjsaldjsal
-          kjdsaljfalkfjaslfkjasflkjljf"
-            img="https://semestaakademi.com/assets/v2/Okr/SA_PM_Thumbnail_Website.png"
-          />
-          <ProgramCard
-            header={{
-              status: ProgramStatus.OPEN,
-              time: 1,
-              timeUnit: "Hari",
-            }}
-            title="re-Setting OKR & re- Builfngaskfjaslfjalskfjaslkfjsaldjsal
-          kjdsaljfalkfjaslfkjasflkjljf"
-            img="https://semestaakademi.com/assets/v2/Okr/SA_PM_Thumbnail_Website.png"
-          />
+          {featuredPrograms.map((program) => (
+            <ProgramCard
+              key={program.title}
+              header={program.header}
+              img={program.img}
+              title={program.title}
+            />
+          ))}
         </div>
         <div className="flex justify-center m-4">
           <Button
@@ -87,26 +216,14 @@ const Beranda: React.FC = () => {
       />
       <div className="px-14 py-5 pb-8 border-b border-primary-black">
         <GridColsLayout className="sm:grid-cols-3 xl:grid-cols-4">
-          <ProfileCard
-            image="https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png"
-            name="Mikhael Gaery Undarsa"
-            description="Co-founder & Chief Marketing Officer at Tiket.com"
-          />
-          <ProfileCard
-            image="https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png"
-            name="Mikhael Gaery Undarsa"
-            description="Co-founder & Chief Marketing Officer at Tiket.com"
-          />
-          <ProfileCard
-            image="https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png"
-            name="Mikhael Gaery Undarsa"
-            description="Co-founder & Chief Marketing Officer at Tiket.com"
-          />
-          <ProfileCard
-            image="https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png"
-            name="Mikhael Gaery Undarsa"
-            description="Co-founder & Chief Marketing Officer at Tiket.com"
-          />
+          {pengajarProfiles.map((profile) => (
+            <ProfileCard
+              key={profile.name}
+              image={profile.image}
+              name={profile.name}
+              description={profile.description}
+            />
+          ))}
         </GridColsLayout>
         <div className="flex justify-center m-4">
           <Button
@@ -123,37 +240,12 @@ const Beranda: React.FC = () => {
         image="https://semestaakademi.com/assets/v2/Homepage/Testimoni.svg"
         title="Testimoni Pengajar dan Alumni"
       />
-      <div></div>
-    </>
-  );
-};
-
-const ProfileCard: React.FC<{
-  image: string;
-  name: string;
-  description: string;
-}> = ({ image, name, description }) => {
-  return (
-    <div className="w-[220px]">
-      <div className="w-[220px] h-[220px]">
-        <img src={image} alt="" className="w-full h-full object-cover" />
+      <div className="h-[500px] py-5 pb-8 border-b border-primary-black">
+        <Slider {...settings} pauseOnHover>
+          {testimonyCards()}
+        </Slider>
       </div>
-      <h3 className="font-bold text-lg mt-4">{name}</h3>
-      <p className="text-sm mt-2">{description}</p>
-    </div>
-  );
-};
-
-const GridColsLayout: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-}> = ({ children, className }) => {
-  return (
-    <div
-      className={`grid grid-flow-col overflow-x-auto gap-4 sm:grid-flow-dense sm:grid-cols-2 xl:grid-cols-3 justify-items-center ${className}`}
-    >
-      {children}
-    </div>
+    </>
   );
 };
 

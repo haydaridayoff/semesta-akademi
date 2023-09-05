@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap");
 
+@font-face {
+  font-family: "Redaction Italic";
+  src: url("../assets/fonts/RedactionItalic-lgB8w.otf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
