@@ -5,7 +5,7 @@ const ProfileCard: React.FC<{
 }> = ({ image, name, description }) => {
   return (
     <div className="w-[220px]">
-      <div className="w-[220px] h-[220px]">
+      <div className="w-full h-[220px]">
         <img src={image} alt="" className="w-full h-full object-cover" />
       </div>
       <h3 className="font-bold text-lg mt-4">{name}</h3>

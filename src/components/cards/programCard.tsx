@@ -1,8 +1,8 @@
 import Button from "../ui/button";
 
 export enum ProgramStatus {
-  OPEN = "OPEN",
-  CLOSED = "CLOSED",
+  OPEN = 1,
+  CLOSED = 0,
 }
 
 const ProgramCard: React.FC<{
@@ -11,7 +11,7 @@ const ProgramCard: React.FC<{
   title: string;
 }> = ({ header, img, title }) => {
   return (
-    <div className="w-80">
+    <div className="sm:w-80 w-72 m-5">
       <div className="h-64 flex flex-col">
         <div className="border border-primary-black h-12 w-full flex bg-primary-white">
           <div className="w-full flex items-center justify-center border-r border-primary-black">

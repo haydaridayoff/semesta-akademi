@@ -29,11 +29,9 @@ const TestimonyCard: React.FC<{
 }> = ({ testimony, name, role, image, color, className }) => {
   return (
     <div
-      className={`m-4 flex flex-col p-6 ${className}`}
+      className={`m-4 flex flex-col p-6 h-[350px] sm:w-[600px] w-[360px] ${className}`}
       style={{
         backgroundColor: color,
-        width: 600,
-        height: 350,
       }}
     >
       <p className="h-full pb-6 font-semibold text-xl">{`"${testimony}"`}</p>

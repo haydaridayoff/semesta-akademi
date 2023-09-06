@@ -46,13 +46,13 @@ const Topbar = () => {
   return (
     <>
       <header
-        className={`fixed flex-col h-20 w-screen transition-all bg-salmon-white z-10 overflow-hidden border-y border-primary-black ${
-          isNavTabOpen ? "h-screen border-primary-white" : ""
+        className={`fixed flex-col  w-screen transition-all bg-salmon-white z-10 overflow-hidden border-y border-primary-black ${
+          isNavTabOpen ? "h-screen border-primary-white" : "h-16 sm:h-20"
         }`}
       >
         <div
-          className={`justify-evenly flex max-w-screen-2xl h-20 transition-colors mx-auto ${
-            isNavTabOpen && "bg-primary-black "
+          className={`justify-evenly flex max-w-screen-2xl h-16 sm:h-20 transition-colors mx-auto ${
+            isNavTabOpen && "bg-primary-black border-b border-primary-white "
           }`}
         >
           <div className="w-full basis-1/3 mx-4">
@@ -130,21 +130,25 @@ const Topbar = () => {
             </div>
             <button
               onClick={navTabToggle}
-              className="w-10 h-10 grid-row-3 my-auto items-center grid md:hidden"
+              className="sm:w-10 sm:h-10 min-h-[1rem] min-w-[1rem] grid-row-3 my-auto items-center grid md:hidden"
             >
               <span
-                className={`h-1 bg-secondary-black rounded-full transition-all duration-200 ${firstLineStyle}`}
+                className={`sm:h-1 h-[2px] bg-secondary-black rounded-full transition-all duration-200 ${firstLineStyle}`}
               ></span>
               <span
-                className={`h-1 bg-secondary-black rounded-full transition-opacity duration-200 ${secondLineStyle}`}
+                className={`sm:h-1 h-[2px] bg-secondary-black rounded-full transition-opacity duration-200 ${secondLineStyle}`}
               ></span>
               <span
-                className={`h-1 bg-secondary-black rounded-full transition-all duration-200 ${thirdLineStyle}`}
+                className={`sm:h-1 h-[2px] bg-secondary-black rounded-full transition-all duration-200 ${thirdLineStyle}`}
               ></span>
             </button>
           </div>
         </div>
-        <div className={`w-full bg-primary-black h-full`}></div>
+        <div
+          className={`w-full bg-primary-black h-screen text-primary-white overflow-y-auto`}
+        >
+          Hello
+        </div>
       </header>
     </>
   );
