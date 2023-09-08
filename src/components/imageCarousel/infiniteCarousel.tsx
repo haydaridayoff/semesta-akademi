@@ -5,53 +5,54 @@ import React from "react";
 const InfiniteCarousel: React.FC<{
   images?: string[];
   items?: React.JSX.Element[];
+  className?: string;
   widthModifier?: number;
-}> = ({ images, items, widthModifier = 1 }) => {
+}> = ({ images, items, widthModifier = 1, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
 
-  useWidthObserver(containerRef, (width) => {
-    setContainerWidth(width);
-  });
+  // useWidthObserver(containerRef, (width) => {
+  //   setContainerWidth(width);
+  // });
 
   return (
-    <div ref={containerRef} className="sm:min-h-[7rem] overflow-hidden w-full">
+    <div ref={containerRef} className={`overflow-hidden w-full ${className}`}>
       <div className="flex w-fit h-full items-center">
         <div
-          className={`h-10 flex animate-go-left-infinite`}
-          style={{
-            width: containerWidth ? containerWidth * 2 * widthModifier : 0,
-          }}
+          className={`h-10 flex shrink-0 animate-go-left-infinite `}
+          // style={{
+          //   width: containerWidth ? containerWidth * 2 * widthModifier : 0,
+          // }}
         >
           {items &&
             items.map((item, index) => (
-              <div key={index} className="h-full w-full mx-5">
+              <div key={index} className="h-full w-full mx-8">
                 {item}
               </div>
             ))}
           {items &&
             items.map((item, index) => (
-              <div key={index} className="h-full w-full mx-5">
+              <div key={index} className="h-full w-full mx-8">
                 {item}
               </div>
             ))}
           {images &&
             images.map((logo, index) => (
-              <div key={index} className="h-full w-full mx-5">
+              <div key={index} className="h-full w-full mx-16">
                 <img
                   src={logo}
                   alt="Semesta Akademi"
-                  className="mx-auto w-auto h-full object-contain"
+                  className="mx-auto w-full h-full"
                 />
               </div>
             ))}
           {images &&
             images.map((logo, index) => (
-              <div key={index} className="h-full w-full mx-5">
+              <div key={index} className="h-full w-full mx-16">
                 <img
                   src={logo}
                   alt="Semesta Akademi"
-                  className="mx-auto w-auto h-full object-contain"
+                  className="mx-auto w-full h-full"
                 />
               </div>
             ))}

@@ -19,7 +19,7 @@ module.exports = {
         "secondary-black": "#212121",
       },
       animation: {
-        "go-left-infinite": "go-left 10s linear infinite",
+        "go-left-infinite": "go-left 20s linear infinite",
       },
       keyframes: {
         "go-left": {

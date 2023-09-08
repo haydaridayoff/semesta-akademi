@@ -232,34 +232,44 @@ const Beranda: React.FC = () => {
         title="Testimoni Pengajar dan Alumni"
       />
       <div className="h-[500px] py-5 pb-8 border-b border-primary-black">
-        <Slider {...settings}>{testimonyCards()}</Slider>
+        <Slider {...settings}>
+          {testimonyCards().map((card, index) => (
+            <div key={index} className="p-5 flex items-center">
+              {card}
+            </div>
+          ))}
+        </Slider>
       </div>
-      <div>
-        <ImageCarousel items={carouselItems()} widthModifier={1.6} />
+      <div className="py-5 border-b border-primary-black bg-yellow-400">
+        <ImageCarousel items={carouselItems()} className="h-full" />
       </div>
-      <div className="px-14 py-5 pb-8 border-b border-primary-black flex">
-        <div>
-          <div>
-            <img src="/images/beranda1.png" alt="" />
+      <div className="px-32 py-20 border-b border-primary-black flex items-center gap-24">
+        <div className="w-[420px] h-[420px] shrink-0">
+          <div className="w-full h-full">
+            <img
+              className="h-full w-full object-contain"
+              src="/images/beranda1.png"
+              alt=""
+            />
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-8 w-full font-primary">
           <h2 className="font-semibold text-5xl text-secondary-black">
-            Temukan Solusi Kreatif
+            Temukan Solusi Kreatif{" "}
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Ellipse.svg"
               alt=""
-              className="inline-block h-10 w-10"
-            />
-            dalam
+              className="inline-block h-12 w-24 align-middle"
+            />{" "}
+            dalam{" "}
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Stairs.svg"
               alt=""
-              className="inline-block h-10 w-10"
-            />
+              className="inline-block h-12 w-12 align-baseline"
+            />{" "}
             Ruang Kolaboratif
           </h2>
-          <p>
+          <p className="text-lg">
             Kami percaya perkembangan ekosistem industri dapat dicapai dengan
             ketersediaan talenta yang berkualitas. Semesta Akademi menawarkan
             program edukasi kreatif melalui pendekatan komunitas bersama para
@@ -267,56 +277,77 @@ const Beranda: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="px-14 py-5 pb-8 border-b border-primary-black flex">
-        <div>
-          <div>
-            <img src="/images/beranda1.png" alt="" />
+      <div className="px-32 py-20 flex flex-row-reverse items-center">
+        <div className="w-[420px] h-[420px] shrink-0">
+          <div className="w-full h-full">
+            <img
+              className="h-full w-full object-contain"
+              src="/images/beranda2.png"
+              alt=""
+            />
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-8 font-primary w-full mr-60">
           <h2 className="font-semibold text-5xl text-secondary-black">
-            Temukan Solusi Kreatif
+            Optimalkan Talenta, Tingkatkan Potensi Perusahaan Anda {""}
             <img
-              src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Ellipse.svg"
+              src="https://semestaakademi.com/assets/v2/Homepage/ArcOrange.svg"
               alt=""
-              className="inline-block h-10 w-10"
+              className="inline-block h-12 w-24 align-baseline"
             />
-            dalam
-            <img
-              src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Stairs.svg"
-              alt=""
-              className="inline-block h-10 w-10"
-            />
-            Ruang Kolaboratif
           </h2>
-          <p>
-            Kami percaya perkembangan ekosistem industri dapat dicapai dengan
-            ketersediaan talenta yang berkualitas. Semesta Akademi menawarkan
-            program edukasi kreatif melalui pendekatan komunitas bersama para
-            pemimpin dan praktisi profesional.
+          <p className="text-lg">
+            Kami menawarkan solusi pengembangan keterampilan dan pengetahuan,
+            berkolaborasi dengan trainer dan praktisi terbaik di industri,
+            sesuai kebutuhan perusahaan Anda.
           </p>
-          <div></div>
+          <div className="flex h-10 gap-12">
+            <img
+              src="https://semestaakademi.com/assets/v2/Homepage/Emtek.png"
+              alt=""
+            />
+            <img
+              src="https://semestaakademi.com/assets/v2/Homepage/BRI.png"
+              alt=""
+            />
+            <img
+              src="https://semestaakademi.com/assets/v2/Homepage/FASBlack.png"
+              alt=""
+            />
+          </div>
           <Button
             outline="primary-black"
             fill="orange"
-            className=""
             isArrowIcon
+            className="w-48 justify-evenly font-primary font-bold"
           >
             Hubungi Kami
           </Button>
         </div>
       </div>
       <div>
-        <div>
-          Berani <span>#BelajarBeda?</span>
-        </div>
-        <div>
-          <Button outline="primary-black" fill="orange" className="">
-            Daftar Sekarang
-          </Button>
-          <Button outline="primary-white" fill="transparent" className="">
-            Hubungi Kami
-          </Button>
+        <div className="flex flex-col rounded-2xl bg-indigo-800 text-primary-white font-primary items-center w-5/6 h-52 justify-center mx-auto gap-4">
+          <div className="text-4xl leading-normal">
+            Berani{" "}
+            <span className="relative">
+              <img
+                src="https://semestaakademi.com/assets/v2/images/join-ellipse.png"
+                alt=""
+                className="inline-block h-20 w-64"
+              />
+              <span className="absolute top-0 left-0 truncate">
+                #BelajarBeda ?
+              </span>
+            </span>
+          </div>
+          <div className="flex gap-8">
+            <Button outline="primary-black" fill="orange" className="">
+              Daftar Sekarang
+            </Button>
+            <Button outline="primary-white" fill="transparent" className="">
+              Hubungi Kami
+            </Button>
+          </div>
         </div>
       </div>
     </>
