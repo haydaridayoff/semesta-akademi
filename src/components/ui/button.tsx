@@ -162,7 +162,9 @@ const Button: React.FC<ButtonProps> = (props) => {
       type={type}
     >
       {children}
-      {isArrowIcon && <img className="h-5 w-5" src={arrowImage} alt="" />}
+      {isArrowIcon && (
+        <img className="h-4 w-4 md:h-5 md:w-5" src={arrowImage} alt="" />
+      )}
     </button>
   );
 };

@@ -32,8 +32,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        primary: ["Hanken Grotesk"],
-        redactionItalic: ["Redaction Italic"],
+        primary: ["var(--font-hanken)"],
+        redactionItalic: ["var(--font-redaction-italic)"],
       },
     },
   },

@@ -127,7 +127,7 @@ const Beranda: React.FC = () => {
           image={testimonies[i].image}
           color={selectedColor}
           className={i % 2 === 0 ? "rotate-1" : "-rotate-1"}
-        />
+        />,
       );
       selectedColor = selectRandomColorException(selectedColor);
       if (i >= testimonies.length - 1) {
@@ -143,11 +143,11 @@ const Beranda: React.FC = () => {
       rows.push(
         <div
           key={index}
-          className="flex items-center font-medium gap-4 text-xl"
+          className="flex items-center gap-4 text-xl font-medium"
         >
           <img src={shape} alt="" className="h-8 w-8" />
           #BelajarBeda
-        </div>
+        </div>,
       );
     });
     return rows;
@@ -155,13 +155,13 @@ const Beranda: React.FC = () => {
 
   return (
     <>
-      <div className="sm:w-full w-full h-auto">
+      <div className="h-auto w-full sm:w-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="sm:w-screen w-full h-auto"
+          className="h-auto w-full sm:w-screen"
         >
           <source
             src="https://semestaakademi.com/assets/v2/Homepage/header_desktop_v2.mp4"
@@ -169,8 +169,8 @@ const Beranda: React.FC = () => {
           ></source>
         </video>
       </div>
-      <div className="w-full flex flex-col md:flex-row border-b border-primary-black">
-        <p className="sm:basis-1/4 py-4 sm:py-7 pl-4 sm:pl-20 sm:pr-3 sm:min-h-[7rem] sm:h-full font-bold text-lg sm:text-2xl font-primary text-secondary-black border-primary-black border-b md:border-b-0 md:border-r">
+      <div className="flex w-full flex-col border-b border-primary-black md:flex-row">
+        <p className="border-b border-primary-black py-4 pl-4 font-primary text-lg font-bold text-secondary-black sm:h-full sm:min-h-[7rem] sm:basis-1/4 sm:py-7 sm:pl-20 sm:pr-3 sm:text-2xl md:border-b-0 md:border-r">
           Belajar dari yang terbaik di Industri
         </p>
         <ImageCarousel images={companyLogos} widthModifier={2} />
@@ -179,8 +179,8 @@ const Beranda: React.FC = () => {
         image="https://semestaakademi.com/assets/v2/Homepage/Daftar_Program.svg"
         title="Daftar Program"
       />
-      <div className="py-5 pb-8 sm:px-14 border-b border-primary-black">
-        <div className="grid grid-flow-col overflow-x-auto gap-4 sm:grid-flow-dense sm:grid-cols-2 xl:grid-cols-3 justify-items-center">
+      <div className="border-b border-primary-black py-5 pb-8 sm:px-14">
+        <div className="grid grid-flow-col justify-items-center gap-4 overflow-x-auto sm:grid-flow-dense sm:grid-cols-2 xl:grid-cols-3">
           {featuredPrograms.map((program) => (
             <ProgramCard
               key={program.title}
@@ -190,7 +190,7 @@ const Beranda: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex justify-center m-4">
+        <div className="m-4 flex justify-center">
           <Button
             fill="transparent"
             outline="orange"
@@ -205,7 +205,7 @@ const Beranda: React.FC = () => {
         image="https://semestaakademi.com/assets/v2/Homepage/Pengajar_Kami.svg"
         title="Pengajar Kami"
       />
-      <div className="px-14 py-5 pb-8 border-b border-primary-black">
+      <div className="border-b border-primary-black py-5 pb-8 sm:px-14">
         <GridColsLayout className="sm:grid-cols-3 xl:grid-cols-4">
           {featuredPengajar.map((profile) => (
             <ProfileCard
@@ -216,7 +216,7 @@ const Beranda: React.FC = () => {
             />
           ))}
         </GridColsLayout>
-        <div className="flex justify-center m-4">
+        <div className="m-4 flex justify-center">
           <Button
             fill="transparent"
             outline="orange"
@@ -231,21 +231,21 @@ const Beranda: React.FC = () => {
         image="https://semestaakademi.com/assets/v2/Homepage/Testimoni.svg"
         title="Testimoni Pengajar dan Alumni"
       />
-      <div className="h-[500px] py-5 pb-8 border-b border-primary-black">
+      <div className="h-[500px] border-b border-primary-black py-5 pb-8">
         <Slider {...settings}>
           {testimonyCards().map((card, index) => (
-            <div key={index} className="p-5 flex items-center">
+            <div key={index} className="flex items-center p-5">
               {card}
             </div>
           ))}
         </Slider>
       </div>
-      <div className="py-5 border-b border-primary-black bg-yellow-400">
+      <div className="border-b border-primary-black bg-yellow-400 py-5">
         <ImageCarousel items={carouselItems()} className="h-full" />
       </div>
-      <div className="px-32 py-20 border-b border-primary-black flex items-center gap-24">
-        <div className="w-[420px] h-[420px] shrink-0">
-          <div className="w-full h-full">
+      <div className="flex flex-col gap-12 border-b border-primary-black px-4 py-20 md:flex-row md:items-center md:gap-24 md:px-32">
+        <div className="h-48 w-48 shrink-0 md:h-[420px] md:w-[420px]">
+          <div className="h-full w-full">
             <img
               className="h-full w-full object-contain"
               src="/images/beranda1.png"
@@ -253,19 +253,19 @@ const Beranda: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-8 w-full font-primary">
-          <h2 className="font-semibold text-5xl text-secondary-black">
+        <div className="flex w-full flex-col gap-8 font-primary ">
+          <h2 className="text-3xl font-semibold text-secondary-black md:text-5xl">
             Temukan Solusi Kreatif{" "}
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Ellipse.svg"
               alt=""
-              className="inline-block h-12 w-24 align-middle"
+              className="inline-block h-8 w-8 align-middle md:h-12 md:w-24"
             />{" "}
             dalam{" "}
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/Ornament_Stairs.svg"
               alt=""
-              className="inline-block h-12 w-12 align-baseline"
+              className="inline-block h-6 w-6 align-baseline md:h-12 md:w-12"
             />{" "}
             Ruang Kolaboratif
           </h2>
@@ -277,9 +277,9 @@ const Beranda: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="px-32 py-20 flex flex-row-reverse items-center">
-        <div className="w-[420px] h-[420px] shrink-0">
-          <div className="w-full h-full">
+      <div className="flex flex-col gap-12 px-4 py-20 md:flex-row-reverse md:items-center md:gap-0 md:px-32">
+        <div className="h-48 w-48 shrink-0 md:h-[420px] md:w-[420px]">
+          <div className="h-full w-full">
             <img
               className="h-full w-full object-contain"
               src="/images/beranda2.png"
@@ -287,13 +287,13 @@ const Beranda: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-8 font-primary w-full mr-60">
-          <h2 className="font-semibold text-5xl text-secondary-black">
+        <div className="mr-60 flex w-full flex-col gap-8 font-primary">
+          <h2 className="text-3xl font-semibold text-secondary-black md:text-5xl">
             Optimalkan Talenta, Tingkatkan Potensi Perusahaan Anda {""}
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/ArcOrange.svg"
               alt=""
-              className="inline-block h-12 w-24 align-baseline"
+              className="inline-block h-8 w-16 align-baseline md:h-12 md:w-24"
             />
           </h2>
           <p className="text-lg">
@@ -301,46 +301,49 @@ const Beranda: React.FC = () => {
             berkolaborasi dengan trainer dan praktisi terbaik di industri,
             sesuai kebutuhan perusahaan Anda.
           </p>
-          <div className="flex h-10 gap-12">
+          <div className="flex max-w-lg flex-wrap justify-between md:max-w-lg">
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/Emtek.png"
               alt=""
+              className="h-6 w-auto object-contain object-left md:h-12"
             />
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/BRI.png"
               alt=""
+              className="h-6 w-auto object-contain object-left md:h-12"
             />
             <img
               src="https://semestaakademi.com/assets/v2/Homepage/FASBlack.png"
               alt=""
+              className="h-6 w-auto object-contain object-left md:h-12"
             />
           </div>
           <Button
             outline="primary-black"
             fill="orange"
             isArrowIcon
-            className="w-48 justify-evenly font-primary font-bold"
+            className="mx-auto gap-2 font-primary font-bold"
           >
             Hubungi Kami
           </Button>
         </div>
       </div>
-      <div className="">
-        <div className="flex flex-col rounded-2xl bg-indigo-800 text-primary-white font-primary items-center w-5/6 h-52 justify-center mx-auto gap-4">
-          <div className="text-4xl leading-normal">
+      <div className="mb-12">
+        <div className="mx-auto flex h-52 w-11/12 max-w-7xl flex-col items-center justify-center gap-4 rounded-2xl bg-indigo-800 font-primary text-primary-white">
+          <div className="text-2xl leading-normal sm:text-4xl">
             Berani{" "}
             <span className="relative">
               <img
                 src="https://semestaakademi.com/assets/v2/images/join-ellipse.png"
                 alt=""
-                className="inline-block h-20 w-64"
+                className="inline-block w-44 sm:h-20 sm:w-64"
               />
-              <span className="absolute top-0 left-0 truncate">
+              <span className="absolute left-0 top-0 truncate">
                 #BelajarBeda ?
               </span>
             </span>
           </div>
-          <div className="flex gap-8">
+          <div className="flex w-full flex-col justify-center gap-4 px-4 sm:flex-row sm:gap-8">
             <Button outline="primary-black" fill="orange" className="">
               Daftar Sekarang
             </Button>

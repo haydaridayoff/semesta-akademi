@@ -4,6 +4,12 @@ import { NavigationProvider } from "../contexts/navigationContext";
 import "../styles/globals.css";
 import NavigationLayout from "../components/layouts/navigationLayout";
 import EmptyLayout from "../components/layouts/emptyLayout";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const MyApp: React.FC<{ Component: any; pageProps: any }> = ({
   Component,

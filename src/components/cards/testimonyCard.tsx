@@ -29,19 +29,19 @@ const TestimonyCard: React.FC<{
 }> = ({ testimony, name, role, image, color, className }) => {
   return (
     <div
-      className={`flex flex-col mx-auto p-6 h-[350px] sm:min-w-[600px]  w-[360px] ${className}`}
+      className={`flex flex-col mx-auto p-6 h-[350px] sm:min-w-[600px]  w-[320px] ${className}`}
       style={{
         backgroundColor: color,
       }}
     >
-      <p className="h-full pb-6 font-semibold text-xl">{`"${testimony}"`}</p>
+      <p className="h-full pb-6 font-semibold text-base sm:text-xl">{`"${testimony}"`}</p>
       <div className="flex h-full justify-between items-center pt-6">
         <div className="h-fit">
-          <h3 className="font-semibold text-2xl">{name}</h3>
-          <p className="font-redactionItalic text-lg">{role}</p>
+          <h3 className="font-semibold text-lg sm:text-2xl">{name}</h3>
+          <p className="font-redactionItalic text-base">{role}</p>
         </div>
         <div className="h-fit">
-          <div className="h-20 w-20 rounded-full overflow-hidden">
+          <div className="h-10 w-10 sm:h-20 sm:w-20 rounded-full overflow-hidden">
             <img src={image} alt="" className="h-full w-full object-cover" />
           </div>
         </div>
