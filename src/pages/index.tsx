@@ -325,7 +325,7 @@ const Beranda: React.FC = () => {
           </Button>
         </div>
       </div>
-      <div>
+      <div className="">
         <div className="flex flex-col rounded-2xl bg-indigo-800 text-primary-white font-primary items-center w-5/6 h-52 justify-center mx-auto gap-4">
           <div className="text-4xl leading-normal">
             Berani{" "}
