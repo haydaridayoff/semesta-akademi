@@ -181,9 +181,9 @@ const Beranda: React.FC = () => {
       />
       <div className="border-b border-primary-black py-5 pb-8 sm:px-14">
         <div className="grid grid-flow-col justify-items-center gap-4 overflow-x-auto sm:grid-flow-dense sm:grid-cols-2 xl:grid-cols-3">
-          {featuredPrograms.map((program) => (
+          {featuredPrograms.map((program, index) => (
             <ProgramCard
-              key={program.title}
+              key={index}
               header={program.header}
               img={program.img}
               title={program.title}
@@ -207,9 +207,9 @@ const Beranda: React.FC = () => {
       />
       <div className="border-b border-primary-black py-5 pb-8 sm:px-14">
         <GridColsLayout className="sm:grid-cols-3 xl:grid-cols-4">
-          {featuredPengajar.map((profile) => (
+          {featuredPengajar.map((profile, index) => (
             <ProfileCard
-              key={profile.name}
+              key={index}
               image={profile.image}
               name={profile.name}
               description={profile.description}

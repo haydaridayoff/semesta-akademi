@@ -4,12 +4,12 @@ const ProfileCard: React.FC<{
   description: string;
 }> = ({ image, name, description }) => {
   return (
-    <div className="w-[220px] mx-4">
-      <div className="w-full h-[220px]">
-        <img src={image} alt="" className="w-full h-full object-cover" />
+    <div className="mx-4 max-w-xs">
+      <div className="min-h-sm max-h-md w-full">
+        <img src={image} alt="" className="h-full w-full object-contain" />
       </div>
-      <h3 className="font-bold text-lg mt-4">{name}</h3>
-      <p className="text-sm mt-2">{description}</p>
+      <h3 className="mt-4 text-lg font-bold">{name}</h3>
+      <p className="mt-2 text-sm">{description}</p>
     </div>
   );
 };

@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import MainTitle from "../components/title/mainTitle";
-import TopMainLayout from "../components/layouts/topMainLayout";
-import FilterBox from "../components/filters/filterBox";
-import DescriptionTitle from "../components/title/descriptionTitle";
-import FilterBoxMobile from "../components/filters/filterBoxMobile";
-import fetchData from "../services/fetchData";
-import { PengajarItem } from "../models/pengajar";
-import { filterNames } from "../data/filter";
-import PengajarContent from "../components/pengajar/pengajarContent";
+import { ProgramsItem } from "../../models/programs";
+import fetchData from "../../services/fetchData";
+import TopMainLayout from "../../components/layouts/topMainLayout";
+import MainTitle from "../../components/title/mainTitle";
+import DescriptionTitle from "../../components/title/descriptionTitle";
+import FilterBox from "../../components/filters/filterBox";
+import { filterNames } from "../../data/filter";
+import FilterBoxMobile from "../../components/filters/filterBoxMobile";
+import ProgramsContent from "../../components/programs/programsContent";
 
-const Pengajar: React.FC = () => {
+const Program: React.FC = () => {
   const [filter, setFilter] = useState<number>(1);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
-  const [filterItems, setFilterItems] = useState<PengajarItem[]>([]);
+  const [filterItems, setFilterItems] = useState<ProgramsItem[]>([]);
 
   useEffect(() => {
     fetchData<{
-      data: PengajarItem[];
-    }>("/mockData/pengajar.json")
+      data: ProgramsItem[];
+    }>("/mockData/programs.json")
       .then((response) => {
         setFilterItems(response.data);
       })
@@ -30,10 +30,11 @@ const Pengajar: React.FC = () => {
     <>
       <TopMainLayout>
         <MainTitle>
-          <span className="font-bold">Pengajar</span>
+          <span className="font-bold">#BelajarBeda</span>
+          <span className="font-redactionItalic"> a la</span>
           <span>
             <img
-              src="https://semestaakademi.com/assets/v2/images/hero-star.png"
+              src="https://semestaakademi.com/assets/v2/images/hero-circle.png"
               alt=""
               className="ml-4 inline-block h-12 w-12 sm:h-24 sm:w-24"
             />
@@ -41,9 +42,9 @@ const Pengajar: React.FC = () => {
           <span className="block font-redactionItalic">Berpengalaman</span>
         </MainTitle>
         <DescriptionTitle>
-          Kolaborasi dan diskusikan semua mengenai bisnis kamu dengan pengajar
-          kami. Dengan pengalaman dan ilmu yang dimiliki, pengajar kami siap
-          membagikan ilmunya kepada kamu!{" "}
+          Kurikulum Workshop Series ini dirancang khusus untuk para pelaku
+          kreatif, pegiat media sosial, dan digital marketer yang ingin
+          mengoptimalkan tampilan serta penyampaian performance report.{" "}
         </DescriptionTitle>
       </TopMainLayout>
       <div className="hidden sm:block">
@@ -62,7 +63,7 @@ const Pengajar: React.FC = () => {
           setIsOpen={setIsFilterOpen}
         />
       </div>
-      <PengajarContent
+      <ProgramsContent
         items={filterItems}
         selectedDivision={filterNames[filter].name}
       />
@@ -70,4 +71,4 @@ const Pengajar: React.FC = () => {
   );
 };
 
-export default Pengajar;
+export default Program;

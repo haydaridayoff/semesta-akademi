@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Fundamentals DHSOADASFSFFAf sadasd",
+      "division": "Creative Fundamentals",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 0, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Fundamentals DHSOADASFSFFAf sadasd",
+      "division": "Creative Fundamentals",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 0, "timeUnit": "VOD" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Fundamentals DHSOADASFSFFAf sadasd",
+      "division": "Creative Fundamentals",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 0, "timeUnit": "VOD" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Fundamentals DHSOADASFSFFAf sadasd",
+      "division": "Creative Fundamentals",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Media Digital Media",
+      "division": "Creative Media",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 0, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Media Digital Media",
+      "division": "Creative Media",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 0, "timeUnit": "VOD" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Media Digital Media",
+      "division": "Creative Media",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 0, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Digital Marketing",
+      "division": "Creative Branding & Marketing",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 0, "timeUnit": "VOD" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Digital Marketing",
+      "division": "Creative Branding & Marketing",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 0, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Digital Marketing",
+      "division": "Creative Branding & Marketing",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Digital Marketing",
+      "division": "Creative Branding & Marketing",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Business",
+      "division": "Creative Business",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 0, "time": 3, "timeUnit": "hari" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Business",
+      "division": "Creative Business",
+      "to": "/program/detail"
+    },
+    {
+      "header": { "status": 1, "time": 0, "timeUnit": "VOD" },
+      "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+      "title": "Semesta Akademi Business",
+      "division": "Creative Business",
+      "to": "/program/detail"
+    }
+  ]
+}

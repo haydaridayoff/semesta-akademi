@@ -1,6 +1,12 @@
 type ButtonStyle = "fill" | "outline";
 
-type Fill = "primary-black" | "secondary-black" | "orange" | "transparent";
+type Fill =
+  | "primary-black"
+  | "secondary-black"
+  | "orange"
+  | "transparent"
+  | "primary-gray"
+  | "secondary-gray";
 
 type Outline =
   | "primary-black"
@@ -9,6 +15,8 @@ type Outline =
   | "salmon-white"
   | "transparent"
   | "orange";
+
+type TextColor = "primary-gray";
 
 type ButtonColor = "primary-black" | "secondary-black";
 
@@ -19,6 +27,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   fill?: Fill;
+  textColor?: TextColor;
   outline?: Outline;
   style?: ButtonStyle;
   color?: ButtonColor;
@@ -37,6 +46,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     disabled,
     color,
     fill,
+    textColor,
     outline,
     isArrowIcon,
   } = props;
@@ -56,6 +66,11 @@ const Button: React.FC<ButtonProps> = (props) => {
     case "transparent":
       buttonClassName = "bg-transparent " + buttonClassName;
       break;
+    case "primary-gray":
+      buttonClassName = "bg-primary-gray " + buttonClassName;
+      break;
+    case "secondary-gray":
+      buttonClassName = "bg-secondary-gray " + buttonClassName;
     default:
       break;
   }
@@ -152,6 +167,14 @@ const Button: React.FC<ButtonProps> = (props) => {
           "https://semestaakademi.com/assets/v2/Homepage/Sideway_Arrow_Black.svg";
         break;
     }
+  }
+
+  switch (textColor) {
+    case "primary-gray":
+      buttonClassName = buttonClassName + " text-primary-gray";
+      break;
+    default:
+      break;
   }
 
   return (
