@@ -71,6 +71,7 @@ const MiddleTitle: React.FC<{
             trigger: ".ellipse",
             start: "top 60%",
             end: "bottom 60%",
+            toggleActions: "play none play reverse",
             markers: {
               startColor: "green",
               endColor: "#FF1C26",
@@ -108,8 +109,11 @@ const MiddleTitle: React.FC<{
           },
           ">",
         )
-        .set(
+        .fromTo(
           ".ellipse-content",
+          {
+            fontFamily: "var(--font-hanken)",
+          },
           {
             fontFamily: "var(--font-redaction-italic)",
           },
