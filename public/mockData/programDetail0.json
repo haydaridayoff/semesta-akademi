@@ -1,0 +1,82 @@
+{
+  "data": {
+    "detail": {
+      "durasi": "7 Minggu",
+      "jadwal": "22 Maret 2022",
+      "ditutup": "20 Maret 2022",
+      "harga-asli": 1700000,
+      "harga-promo": 1500000,
+      "harga-cicilan-perbulan": 227700
+    },
+    "untuk-kamu": [
+      {
+        "title": "Pengusaha UMKM Kuliner",
+        "description": "Kamu yang ingin mengembangkan bisnis kuliner kamu dengan memanfaatkan media sosial"
+      },
+      {
+        "title": "Pengusaha Kuliner Sampingan",
+        "description": "Kamu yang ingin mengembangkan bisnis kuliner kamu dengan memanfaatkan media sosial"
+      }
+    ],
+    "pengajar": [
+      {
+        "name": "Mikhael Gaery Undarsa",
+        "description": "Co-founder & Chief Marketing Officer at Tiket.com",
+        "image": "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+        "division": "Creative Branding & Marketing"
+      },
+      {
+        "name": "Desy Bachir",
+        "description": "Senior Product Manager",
+        "image": "https://semestaakademi.com/assets/v2/DigitalMarketing/Desy_Bachir.png",
+        "division": "Creative Branding & Marketing"
+      },
+      {
+        "name": "Mikhael Gaery Undarsa",
+        "description": "Co-founder & Chief Marketing Officer at Tiket.com",
+        "image": "https://semestaakademi.com/assets/v2/DigitalMarketing/Gaery.png",
+        "division": "Creative Branding & Marketing"
+      },
+      {
+        "name": "Desy Bachir",
+        "description": "Senior Product Manager",
+        "image": "https://semestaakademi.com/assets/v2/DigitalMarketing/Desy_Bachir.png",
+        "division": "Creative Branding & Marketing"
+      },
+      {
+        "name": "Agung Hapsah",
+        "description": "Content Creator",
+        "image": "https://semestaakademi.com/assets/v2/ContentCreation/Agung.png",
+        "division": "Creative Media"
+      }
+    ],
+    "semesta": [
+      {
+        "image": "none",
+        "title": "Live Session with Industry Expert"
+      },
+      {
+        "image": "none",
+        "title": "Live Session with Industry Expert"
+      },
+      {
+        "image": "none",
+        "title": "Live Session with Industry Expert"
+      },
+      {
+        "image": "none",
+        "title": "Live Session with Industry Expert"
+      },
+      {
+        "image": "none",
+        "title": "Live Session with Industry Expert"
+      }
+    ],
+    "kurikulum": [
+      {
+        "title": "Validasi Ide Bisnis Kulinermu",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      }
+    ]
+  }
+}

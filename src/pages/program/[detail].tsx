@@ -1,16 +1,14 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
-import DescriptionTitle from "../../components/title/descriptionTitle";
 import MainTitle from "../../components/title/mainTitle";
-import { dateToIndonesianString } from "../../utils/dateConverter";
-import { moneyConverter } from "../../utils/moneyConverter";
-import { gsap } from "gsap";
-import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import MiddleTitle from "../../components/title/middleTitle";
+import DetailProgramTitleLayout from "../../components/layouts/detailProgramTitleLayout";
+import DetailProgramHeader from "../../components/layouts/detailProgramHeader";
+import SectionTitle from "../../components/title/sectionTitle";
+import ProfileCard from "../../components/cards/profileCard";
 
 const ProgramDetail: React.FC = () => {
   return (
     <>
-      <ProgramDetailHeader
+      <DetailProgramHeader
         durasi="3 Bulan"
         jadwalBuka={new Date()}
         jadwalTutup={new Date()}
@@ -49,179 +47,35 @@ const ProgramDetail: React.FC = () => {
           Kuliner dari Nol
         </MiddleTitle>
       </DetailProgramTitleLayout>
-    </>
-  );
-};
-
-const MiddleTitle: React.FC<{
-  children: React.ReactNode;
-}> = ({ children }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.registerPlugin(DrawSVGPlugin);
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.set(".ellipse", {
-        visibility: "visible",
-      });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".ellipse",
-            start: "top 60%",
-            end: "bottom 60%",
-            toggleActions: "play none play reverse",
-            markers: {
-              startColor: "green",
-              endColor: "#FF1C26",
-            },
-          },
-        })
-        .fromTo(
-          ".ellipse",
-          {
-            drawSVG: 0,
-            immediateRender: false,
-          },
-          {
-            duration: 2,
-            drawSVG: "100%",
-            ease: "power4.inOut",
-          },
-          "stroke",
-        )
-        .to(
-          ".ellipse-content",
-          {
-            duration: 1,
-            opacity: 0,
-            ease: "power4.in",
-          },
-          "<",
-        )
-        .to(
-          ".ellipse-content",
-          {
-            duration: 1,
-            opacity: 1,
-            ease: "power4.out",
-          },
-          ">",
-        )
-        .fromTo(
-          ".ellipse-content",
-          {
-            fontFamily: "var(--font-hanken)",
-          },
-          {
-            fontFamily: "var(--font-redaction-italic)",
-          },
-          "<",
-        );
-      return () => {
-        ctx.revert();
-      };
-    }, containerRef);
-  }, []);
-
-  return (
-    <p
-      ref={containerRef}
-      className=" text-5xl font-semibold leading-relaxed text-secondary-black"
-    >
-      {children}
-    </p>
-  );
-};
-
-const DetailProgramTitleLayout: React.FC<{
-  children: React.ReactNode;
-}> = ({ children }) => {
-  return (
-    <div className="flex h-full w-full bg-gradient-to-b from-cyan-400 pb-16 pl-24 pt-40">
-      <div className="h-32 w-32">
-        <img
-          src="https://semestaakademi.com/assets/v2/ProgramDetails/Purple_Star.svg"
-          alt=""
-          className="h-full w-full object-contain"
+      <section className="flex border-b border-primary-black pb-16 pl-24">
+        <h2>Untuk Kamu</h2>
+        <div>
+          <h3>Pengusaha UMKM Kuliner</h3>
+          <p>
+            Kamu yang ingin mempelajari lebih dalam bagaimana cara membesarkan
+            bisnis kamu, atau yang baru memulai bisnis di dunia F&B{" "}
+          </p>
+        </div>
+        <div>
+          <h3>Pengusaha Kuliner Sampingan</h3>
+          <p>
+            Kamu yang tertarik menjelajahi industri makanan dan minuman atau
+            bisnis kuliner lainnya sebagai bisnis sampingan
+          </p>
+        </div>
+      </section>
+      <SectionTitle
+        image="https://semestaakademi.com/assets/v2/ProgramDetails/Green_Triangle.svg"
+        title="Pengajar Berpengalaman"
+      />
+      <section className="grid grid-flow-col gap-4 overflow-x-auto">
+        <ProfileCard
+          name="Arief Widhiyasa"
+          description="Arief Widhiyasa adalah seorang pengusaha muda yang bergerak di bidang kuliner. Ia adalah founder dari beberapa brand kuliner seperti Bakmi GM, Bakmi Gocit, dan Bakmi Gajah Mada. Ia juga merupakan founder dari beberapa brand kuliner lainnya seperti Bakmi Gajah Mada, Bakmi Gocit, dan Bakmi GM. Ia juga merupakan founder dari beberapa brand kuliner lainnya seperti Bakmi Gajah Mada, Bakmi Gocit, dan Bakmi GM."
+          image="https://semestaakademi.com/assets/v2/ProgramDetails/.png"
         />
-      </div>
-      <div className="w-full">{children}</div>
-      <div className="flex h-full w-fit flex-col items-start justify-center gap-2">
-        <span className="block h-28 w-28 -rotate-90 overflow-hidden truncate text-start font-redactionItalic text-sm">
-          Scroll to bottom
-        </span>
-        <span className="h-4 w-4">
-          <img
-            className="h-full w-full object-contain"
-            src="https://semestaakademi.com/assets/v2/images/arrow-bottom.png"
-            alt="sadada"
-          />
-        </span>
-      </div>
-    </div>
-  );
-};
-
-const ProgramDetailHeader: React.FC<{
-  durasi?: string;
-  jadwalBuka?: Date;
-  jadwalTutup?: Date;
-  hargaAsli?: number;
-  hargaPromo?: number;
-  hargaPerBulan?: number;
-}> = ({
-  durasi,
-  jadwalBuka,
-  jadwalTutup,
-  hargaAsli,
-  hargaPromo,
-  hargaPerBulan,
-}) => {
-  return (
-    <div className="fixed z-10 flex h-24 w-full gap-8 bg-secondary-black px-32 py-6">
-      <div className={`flex flex-col ${!durasi && "hidden"}`}>
-        <p className="text-xs font-semibold text-orange-600">Durasi Program</p>
-        <p className="font-semibold text-primary-white">{durasi}</p>
-      </div>
-      <div className={`flex flex-col ${!durasi && "hidden"}`}>
-        <p className="text-xs font-semibold text-orange-600">Jadwal Kelas</p>
-        <p className="font-semibold text-primary-white">
-          {jadwalBuka && dateToIndonesianString(jadwalBuka)}
-        </p>
-      </div>
-      <div className={`flex flex-col ${!durasi && "hidden"}`}>
-        <p className="text-xs font-semibold text-orange-600">
-          Pendaftaran Ditutup
-        </p>
-        <p className="font-semibold text-primary-white">
-          {jadwalTutup && dateToIndonesianString(jadwalTutup)}
-        </p>
-      </div>
-      <div className={`flex flex-col ${!durasi && "hidden"}`}>
-        <p className="text-xs font-semibold text-orange-600">Harga</p>
-        <p className="font-semibold text-primary-white">
-          {hargaAsli && moneyConverter(hargaAsli)}
-        </p>
-      </div>
-      <div className={`flex flex-col ${!durasi && "hidden"}`}>
-        <p className="text-xs font-semibold text-orange-600">Harga Promo</p>
-        <p className="font-semibold text-primary-white">
-          {hargaPromo && moneyConverter(hargaPromo)}
-        </p>
-        <p
-          className={`text-xs text-primary-white ${!hargaPerBulan && "hidden"}`}
-        >
-          {"("}Starts from{" "}
-          <span className="font-black">
-            {hargaPerBulan && moneyConverter(hargaPerBulan, false)}
-          </span>
-          /month*
-          {")"}
-        </p>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
