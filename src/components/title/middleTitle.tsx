@@ -5,7 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const MiddleTitle: React.FC<{
   children: React.ReactNode;
-}> = ({ children }) => {
+  className?: string;
+}> = ({ children, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const MiddleTitle: React.FC<{
           {
             duration: 2,
             drawSVG: "100%",
-            ease: "power4.inOut",
+            ease: "power4.out",
           },
           "stroke",
         )
@@ -74,7 +75,7 @@ const MiddleTitle: React.FC<{
   return (
     <p
       ref={containerRef}
-      className=" text-5xl font-semibold leading-relaxed text-secondary-black"
+      className="my-6 text-3xl font-semibold text-secondary-black sm:text-5xl sm:leading-tight lg:my-0 lg:leading-snug"
     >
       {children}
     </p>

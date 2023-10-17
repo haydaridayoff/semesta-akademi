@@ -21,7 +21,7 @@ const NavigationLayout: React.FC<{ children: React.ReactNode }> = ({
         className={`relative h-full bg-salmon-white ${hankenGrotesk.variable} ${myFont.variable} font-primary`}
       >
         <Topbar />
-        <div className="relative pt-20">{children}</div>
+        <div className="relative pt-16 sm:pt-20">{children}</div>
         <Footer />
       </main>
     </>

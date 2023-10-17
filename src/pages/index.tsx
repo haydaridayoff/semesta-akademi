@@ -1,45 +1,15 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import ImageCarousel from "../components/imageCarousel/infiniteCarousel";
+import { useEffect, useState } from "react";
+import ImageCarousel from "../components/carousel/infiniteCarousel";
 import ProgramCard, { ProgramStatus } from "../components/cards/programCard";
 import SectionTitle from "../components/title/sectionTitle";
 import Button from "../components/ui/button";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider, { Settings as SlickSettings } from "react-slick";
 import ProfileCard from "../components/cards/profileCard";
-import TestimonyCard, {
-  Color,
-  selectRandomColor2Execption,
-  selectRandomColorException,
-} from "../components/cards/testimonyCard";
 import GridColsLayout from "../components/layouts/gridColsLayout";
 import fetchData from "../services/fetchData";
-
-const settings: SlickSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  centerMode: true,
-  arrows: false,
-  variableWidth: true,
-  responsive: [
-    {
-      breakpoint: 915,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
-        variableWidth: false,
-        centerMode: false,
-      },
-    },
-  ],
-};
+import { Testimony } from "../models/testimony";
+import TestimonyCarousel from "../components/carousel/testimonyCarousel";
 
 interface Program {
   header: ProgramHeader;
@@ -51,13 +21,6 @@ interface ProgramHeader {
   status: ProgramStatus;
   time: number;
   timeUnit: string;
-}
-
-interface Testimony {
-  testimony: string;
-  name: string;
-  role: string;
-  image: string;
 }
 
 interface Pengajar {
@@ -115,28 +78,6 @@ const Beranda: React.FC = () => {
       });
   }, []);
 
-  const testimonyCards = () => {
-    const rows = [];
-    let selectedColor: Color = "orange";
-    for (let i = 0; i < testimonies.length; i++) {
-      rows.push(
-        <TestimonyCard
-          testimony={testimonies[i].testimony}
-          name={testimonies[i].name}
-          role={testimonies[i].role}
-          image={testimonies[i].image}
-          color={selectedColor}
-          className={i % 2 === 0 ? "rotate-1" : "-rotate-1"}
-        />,
-      );
-      selectedColor = selectRandomColorException(selectedColor);
-      if (i >= testimonies.length - 1) {
-        selectedColor = selectRandomColor2Execption(selectedColor, "orange");
-      }
-    }
-    return rows;
-  };
-
   const carouselItems = (): JSX.Element[] => {
     const rows: JSX.Element[] = [];
     shapes.map((shape, index) => {
@@ -170,10 +111,14 @@ const Beranda: React.FC = () => {
         </video>
       </div>
       <div className="flex w-full flex-col border-b border-primary-black md:flex-row">
-        <p className="border-b border-primary-black py-4 pl-4 font-primary text-lg font-bold text-secondary-black sm:h-full sm:min-h-[7rem] sm:basis-1/4 sm:py-7 sm:pl-20 sm:pr-3 sm:text-2xl md:border-b-0 md:border-r">
+        <p className="border-b border-primary-black py-4 pl-4 font-primary text-lg font-bold text-secondary-black sm:h-full sm:min-h-[7rem] sm:basis-1/3 sm:py-7 sm:pl-20 sm:pr-3 sm:text-2xl md:border-b-0 md:border-r">
           Belajar dari yang terbaik di Industri
         </p>
-        <ImageCarousel images={companyLogos} widthModifier={2} />
+        <ImageCarousel
+          images={companyLogos}
+          widthModifier={2}
+          className="my-8"
+        />
       </div>
       <SectionTitle
         image="https://semestaakademi.com/assets/v2/Homepage/Daftar_Program.svg"
@@ -231,15 +176,7 @@ const Beranda: React.FC = () => {
         image="https://semestaakademi.com/assets/v2/Homepage/Testimoni.svg"
         title="Testimoni Pengajar dan Alumni"
       />
-      <div className="h-[500px] border-b border-primary-black py-5 pb-8">
-        <Slider {...settings}>
-          {testimonyCards().map((card, index) => (
-            <div key={index} className="flex items-center p-5">
-              {card}
-            </div>
-          ))}
-        </Slider>
-      </div>
+      <TestimonyCarousel testimonies={testimonies} />
       <div className="border-b border-primary-black bg-yellow-400 py-5">
         <ImageCarousel items={carouselItems()} className="h-full" />
       </div>

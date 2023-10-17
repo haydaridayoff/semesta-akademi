@@ -1,13 +1,14 @@
 import { dateToIndonesianString } from "../../utils/dateConverter";
 import { moneyConverter } from "../../utils/moneyConverter";
 
-const DetailProgramHeader: React.FC<{
+const DetailProgramInfo: React.FC<{
   durasi?: string;
   jadwalBuka?: Date;
   jadwalTutup?: Date;
   hargaAsli?: number;
   hargaPromo?: number;
   hargaPerBulan?: number;
+  fixed?: boolean;
 }> = ({
   durasi,
   jadwalBuka,
@@ -15,9 +16,16 @@ const DetailProgramHeader: React.FC<{
   hargaAsli,
   hargaPromo,
   hargaPerBulan,
+  fixed,
 }) => {
   return (
-    <div className="fixed z-10 flex h-24 w-full gap-8 bg-secondary-black px-32 py-6">
+    <div
+      className={`gap-8 bg-secondary-black lg:px-32 ${
+        fixed
+          ? "fixed z-10 hidden h-24 w-full  lg:flex"
+          : "flex flex-col p-4 lg:hidden"
+      }`}
+    >
       <div className={`flex flex-col ${!durasi && "hidden"}`}>
         <p className="text-xs font-semibold text-orange-600">Durasi Program</p>
         <p className="font-semibold text-primary-white">{durasi}</p>
@@ -62,4 +70,4 @@ const DetailProgramHeader: React.FC<{
   );
 };
 
-export default DetailProgramHeader;
+export default DetailProgramInfo;

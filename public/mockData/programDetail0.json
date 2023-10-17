@@ -2,8 +2,8 @@
   "data": {
     "detail": {
       "durasi": "7 Minggu",
-      "jadwal": "22 Maret 2022",
-      "ditutup": "20 Maret 2022",
+      "jadwal": "2021-22-4",
+      "ditutup": "2021-20-4",
       "harga-asli": 1700000,
       "harga-promo": 1500000,
       "harga-cicilan-perbulan": 227700
@@ -74,8 +74,100 @@
     ],
     "kurikulum": [
       {
+        "timeline": "Week 1",
         "title": "Validasi Ide Bisnis Kulinermu",
         "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 2",
+        "title": "Membuat Branding yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 3",
+        "title": "Membuat Konten yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 4",
+        "title": "Membuat Makanan yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 5",
+        "title": "Membuat Website yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 6",
+        "title": "Membuat Website yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      },
+      {
+        "timeline": "Week 7",
+        "title": "Membuat Website yang Menarik",
+        "description": "Kamu akan belajar bagaimana cara memvalidasi ide bisnis kuliner kamu, sehingga kamu bisa memastikan bahwa bisnis kuliner kamu akan sukses di masa depan."
+      }
+    ],
+    "testimony": [
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      },
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      },
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      },
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      },
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      },
+      {
+        "testimony": "Disini kita bukan hanya mendengar lecturers secara one way, tetapi setelah itu, kami ada “tugas” untuk memikirkan bagaimana mengaplikasikan apa yang kita pelajari ke business kami",
+        "name": "Hiroto Rauzan Fikri",
+        "role": "Digital Marketing",
+        "image": "https://semestaakademi.com/assets/v2/images/testimonials/hiroto.png"
+      }
+    ],
+    "program-lain": [
+      {
+        "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+        "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+        "title": "Fundamentals DHSOADASFSFFAf sadasd",
+        "division": "Creative Fundamentals",
+        "to": "/program/detail"
+      },
+      {
+        "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+        "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+        "title": "Fundamentals DHSOADASFSFFAf sadasd",
+        "division": "Creative Fundamentals",
+        "to": "/program/detail"
+      },
+      {
+        "header": { "status": 1, "time": 3, "timeUnit": "hari" },
+        "img": "https://semestaakademi.com/assets/v2/MusicalTheaterActing/MusicalTheaterActingBatch2.png",
+        "title": "Fundamentals DHSOADASFSFFAf sadasd",
+        "division": "Creative Fundamentals",
+        "to": "/program/detail"
       }
     ]
   }
